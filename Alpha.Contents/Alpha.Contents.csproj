@@ -72,19 +72,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="CSS\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="CSS\bootstrap\css\bootstrap-theme.min.css.map" />
-    <Content Include="CSS\bootstrap\css\bootstrap.css.map" />
-    <Content Include="CSS\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="CSS\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="CSS\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="CSS\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="CSS\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="CSS\sass\page.scss" />
-    <Content Include="CSS\sass\_mixins.scss" />
-    <Content Include="CSS\sass\_variables.scss" />
-    <Content Include="CSS\sass\component.scss" />
-    <Content Include="Libraries\jquery\jquery-1.11.3.min.map" />
+    <Content Include="css\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap\css\bootstrap.css.map" />
+    <Content Include="css\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="css\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\sass\page.scss" />
+    <Content Include="css\sass\_mixins.scss" />
+    <Content Include="css\sass\_variables.scss" />
+    <Content Include="css\sass\component.scss" />
+    <Content Include="libs\jquery\jquery-1.11.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -93,29 +93,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="CSS\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="CSS\bootstrap\css\bootstrap.css" />
-    <Content Include="CSS\bootstrap\css\bootstrap.min.css" />
-    <Content Include="CSS\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="CSS\bootstrap\js\bootstrap.js" />
-    <Content Include="CSS\bootstrap\js\bootstrap.min.js" />
-    <Content Include="CSS\bootstrap\js\npm.js" />
-    <Content Include="Components\datetimepicker\css\bootstrap-datetimepicker.css" />
-    <Content Include="Components\datetimepicker\css\bootstrap-datetimepicker.min.css" />
-    <Content Include="Components\datetimepicker\js\bootstrap-datetimepicker.js" />
-    <Content Include="Components\datetimepicker\js\bootstrap-datetimepicker.min.js" />
-    <Content Include="Components\datetimepicker\js\datepicker.js" />
-    <Content Include="Libraries\jquery\jquery-1.11.3.js" />
-    <Content Include="Libraries\jquery\jquery-1.11.3.min.js" />
-    <Content Include="Libraries\moment\moment.js" />
+    <Content Include="css\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\css\bootstrap.css" />
+    <Content Include="css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="css\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\bootstrap\js\bootstrap.js" />
+    <Content Include="css\bootstrap\js\bootstrap.min.js" />
+    <Content Include="css\bootstrap\js\npm.js" />
+    <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="components\datetimepicker\js\datepicker.js" />
+    <Content Include="libs\jquery\jquery-1.11.3.js" />
+    <Content Include="libs\jquery\jquery-1.11.3.min.js" />
+    <Content Include="libs\moment\moment.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
