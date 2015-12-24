@@ -1,0 +1,33 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin shadow($top, $left, $blur, $color, $inset: false) {
+ @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin icon($height, $width, $x, $y) {
+    background: url(../Images/sprite_01.png);
+    background-position: $x $y;
+    display: inline-block;
+    height: $height;
+    width: $width;
+}
+
+@mixin font($color, $font-size, $font-family) {
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+}
+

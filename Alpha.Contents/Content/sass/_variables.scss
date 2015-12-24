@@ -1,0 +1,6 @@
+$primary-color: #5c1218;
+$primary-light-color: lighten(saturate(adjust-hue($primary-color, 0.5792), 0.4692), 66.2745);
+$text-color: #333;
+
+$font-family: Arial;
+$font-size: 12px;

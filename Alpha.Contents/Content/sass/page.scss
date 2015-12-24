@@ -1,0 +1,783 @@
+@import 'variables';
+@import 'mixins';
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $font-family;
+    font-size: $font-size;
+    overflow-y: hidden;
+}
+
+.icon {
+    position: relative;
+    top: 2px;
+    right: 5px;
+    cursor: pointer;
+}
+.icon-totalbet {
+    @include icon(13px, 10px, -18px, -20px);
+}
+.icon-forecast {
+    @include icon(15px, 16px, -17px, -63px);
+}
+.icon-report {
+    @include icon(17px, 16px, -17px, -111px);
+}
+.icon-memberinfo {
+    @include icon(16px, 16px, -17px, -160px);
+}
+.icon-transfer {
+    @include icon(17px, 17px, -221px, -456px);
+}
+.icon-collapse {
+    @include icon(18px, 18px, -73px, -21px);
+}
+.icon-help {
+    @include icon(16px, 16px, -73px, -436px);
+}
+.icon-contact {
+    @include icon(16px, 16px, -73px, -472px);
+}
+.icon-editprofile {
+    @include icon(16px, 16px, -73px, -508px);
+}
+.icon-extra {
+     @include icon(13px, 13px, -183px, -22px);
+}
+.icon-viewlog {
+     @include icon(18px, 16px, -219px, -155px);
+}
+.icon-anouncement {
+     @include icon(18px, 18px, -219px, -209px);
+}
+.icon-security {
+    @include icon(18px, 17px, -219px, -296px);
+}
+.icon-profile {
+    @include icon(16px, 16px, -220px, -364px);
+}
+.icon-password {
+    @include icon(18px, 14px, -220px, -328px);
+}
+.icon-statistic {
+    @include icon(16px, 16px, -220px, -393px);
+}
+.icon-accinfo {
+    @include icon(18px, 20px, -216px, -424px);
+}
+.icon-balance {
+    @include icon(20px, 20px, -134px, -18px);
+}
+.bold {
+    font-weight: bold;
+}
+
+
+
+/********************************** HEADER ******************************************/
+
+.header {
+    height: 88px;
+    background: $primary-color;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+
+    &-left {
+        width: 256px;
+        float: left;
+        &-logo {
+            @include icon(63px, 64px, -122px, -350px);
+            float: left;
+            margin: 12px;
+            cursor: pointer;
+        }
+        .userinfo {
+            color: #fff;
+            font-size: 13px;
+            padding-top: 18px;
+            > p {
+                font-size: 12px;
+                margin-top: 8px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+    &-right {
+        margin-left: 256px;
+        &-top {
+            background: url(../Images/headerbg.jpg) #67151b no-repeat;
+            height: 48px;
+            .icon-collapse {
+                position: relative;
+                top: 18px;
+                left: 8px;
+                cursor: pointer;
+            }
+            .list-top {
+                float: right;
+                color: #fff;
+                font-size: $font-size + 1;
+                > li {
+                    display: inline-block;
+                    margin: 8px 0;
+                    padding: 5px 10px;
+                    position: relative;
+                    .txt-top {
+                        opacity: 0.8;
+                    }
+                    .list-setting {
+                        @include shadow(0, 0, 4px, rgba(0, 0, 0, 0.3));
+                        background: #fff;
+                        color: $primary-color;
+                        position: absolute;
+                        top: 40px;
+                        min-width: 160px;
+                        right: -39px;
+                        display: none;
+                        z-index: 100;
+                        > li {
+                            a {
+                                display: block;
+                                padding: 9px 20px;
+                                font-weight: 600;
+                                color: $primary-color;
+                                cursor: pointer;
+                                .icon {
+                                    position: relative;
+                                    top: 3px;
+                                    margin-right: 10px;
+                                }
+                            }
+                            &:hover {
+                                background: #ddd;
+                            }
+                        }
+                    } 
+                    &.active {
+                        .list-setting {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            
+            .icon-clock {
+                @include icon(16px, 16px, -71px, -389px);
+            }
+            .icon-flag {
+                @include icon(12px, 17px, -73px, -115px);
+            }
+            .icon-notify {
+                 @include icon(16px, 14px, -73px, -260px);
+            }
+            .icon-setting {
+                 @include icon(16px, 16px, -73px, -304px);
+            }
+            .icon-logout {
+                 @include icon(13px, 16px, -73px, -349px);
+            }
+        }
+        &-bottom {
+            background: #fff;
+            //border-bottom: 1px solid #bebebe;
+            height: 40px;
+            padding: 10px 0;
+            position: relative;
+            @include shadow(1px, 0, 3px, rgba(0, 0, 0, 0.3));
+            .botom-right {
+                position: absolute;
+                right: 16px;
+            }
+            .live-status {
+                float: left;
+                padding: 0 10px;
+                @media (max-width: 1320px) {
+                    padding-right: 70px;
+                }
+            }
+            .maquee {
+                color: #045ace;
+                font-size: 13px;
+            }
+            .icon-home {
+                 @include icon(14px, 16px, -73px, -64px);
+            }
+            .icon-plus {
+                @include icon(16px, 16px, -73px, -158px);
+                display: inline-block;
+                padding-left: 8px;
+            }
+            .email-box {
+                display: inline-block;
+                position: relative;
+                margin-top: 2px;
+                .value {
+                    @include border-radius(50%);
+                    background: #da1625;
+                    color: #fff;
+                    padding: 2px 5px;
+                    position: absolute;
+                    top: -6px;
+                    right: -4px;
+                }
+            }
+            .icon-email {
+                @include icon(14px, 18px, -73px, -213px);
+            }
+        }
+    }
+    
+    &.collapse {
+        .header-left {
+            width: 46px;
+            height: 88px;
+            .header-left-logo {
+                 @include icon(30px, 32px, -136px, -427px);
+                 margin: 8px 6px;
+            }
+            .userinfo {
+                display: none;
+            }
+            .extra-box {
+                background: #fff;
+                height: 40px;
+                margin-top: 48px;
+                width: 46px;
+                .icon-extra {
+                    right: -22px;
+                    top: 12px;
+                }
+            }
+        }
+        .header-right {
+            margin-left: 46px;
+            
+        }
+        
+    }
+}
+
+
+.content {
+    //height: calc(100% - 88px);
+   //padding-top: 88px;  
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    &-left {
+        background: #f9f9f9;
+        @include shadow(1px, 0, 3px, rgba(0, 0, 0, 0.3));        
+        width: 256px;
+        position: fixed;
+        top: 88px;
+        bottom: 0;
+        transition: all 0.25s ease-in 0s;
+        overflow: auto;
+        z-index: 99;
+        
+        /*********************************** LEFT MENU *********************************************/
+        
+        .menu {
+            overflow: hidden;
+            li {
+                float: left;
+                width: 50%;
+                background: $primary-color;
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    display: block;
+                    height: 48px;
+                    line-height: 48px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #fff;
+                    white-space: nowrap;
+                }
+                &.active {
+                    background: #f9f9f9;
+                    a {
+                        color: $primary-color;
+                    }
+                }
+                
+            }
+        }
+        
+        .extra-box {
+            display:  none;
+        }
+        
+        /*********************************** MAIN MENU *********************************************/
+        
+        .mainmenu-container {
+            .list-menu {  
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                box-shadow: none;
+                .menu-item {
+                    position: relative;
+                    //padding: 0 5px 0 20px;                    
+                    text-transform: uppercase;                    
+                    color: #000000;
+                    font-weight: 600; 
+                    a { 
+                      display: table;
+                      white-space: nowrap;
+                      color: #000000;
+                      text-decoration: none;
+                      height: 48px;
+                      line-height: 48px;
+                      width: 224px;
+                        &.collapsible-header {
+                            background-color: inherit;
+                        }
+                      .txt-item {
+                            float: left;
+                        }  
+                        
+                      .icon-chevron-right {
+                          transform: rotate(0deg);
+                          transition: transform 0.3s ease;
+                          margin: 0;
+                          width: auto;
+                      }
+                        &.active {
+                            background: #F5E6E6;
+                            .icon-chevron-right {
+                                transform: rotate(90deg);
+                            }
+                        }
+                    }
+                    
+                    .icon {
+                        margin-right: 24px;
+                        width: 16px;
+                        float: left;
+                        top: 16px;
+                        right: 1px;
+                    }
+                    
+                    .sub-menu {
+                        font-weight: normal;
+                        //display: none;
+                        &-item {
+                            text-transform: none; 
+                            a {
+                                color: #555555;
+                                display: table;
+                                white-space: nowrap;
+                                text-decoration: none;
+                                padding: 0 5px 0 56px;
+                                font-weight: 600;
+                                height: 36px;
+                                line-height: 36px;   
+                                width: 195px;
+                            } 
+                            &:hover {
+                                a {
+                                    color: $primary-color;
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    .active {
+                        .sub-menu {
+                            display: block;
+                        }                        
+                    }                    
+                }
+            }
+        }
+        
+        /*********************************** ACCOUNT INFO **************************************/
+        
+        .accountinfo-container {
+            display: none;
+            .icon-accinfo {
+                display: none;
+                position: relative;
+                left: 10px;
+            }
+            .row {
+                margin-bottom: 5px;
+                &:last-child {
+                     margin-bottom: 20px;
+                }
+            }
+            
+            .info {
+                line-height: 2.5;
+                .remark {
+                    a {
+                        position: relative;
+                        img {
+                            position: absolute;
+                            display: none;
+                            bottom: 5px;
+                            right: 0;
+                        }
+                        &:hover {
+                            img {
+                               display: block; 
+                            }                            
+                        }
+                    }
+                }
+            }
+            
+            .input-field {
+                margin-top: 0;
+                .search, .inp-value {
+                    height: 2rem;
+                    margin-bottom: 0;
+                    &:focus:not([readonly]) {
+                        border-bottom: 1px solid $primary-color;
+                        box-shadow: 0 1px 0 0 $primary-color;  
+                        
+                    }
+                }
+                
+                .prefix {
+                    top: 9px;
+                    right: 10px;
+                    font-size: 21px;
+                    width: auto;
+                    &.active {
+                        color: $primary-color;
+                    }
+                }
+            }
+            
+            .btn-block {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                position: relative;
+                .btn {
+                    text-transform: none;
+                    padding: 0 0.5rem;
+                    background: $primary-color;
+                }
+                img {
+                    position: absolute;
+                    display: none;
+                    
+                    &.active {
+                        display: block;
+                        right: 0;
+                        z-index: 1;
+                        top: 32px;
+                    }
+                }
+            }
+            
+            [type="checkbox"].filled-in:not(:checked) + label:before,
+            [type="checkbox"].filled-in:checked + label:before {
+                width: 3px;
+                height: 8px;
+            }
+            
+            [type="checkbox"].filled-in:not(:checked) + label:after,
+            [type="checkbox"].filled-in:checked + label:after {
+                width: 13px;
+                height: 13px;
+            }
+            
+            [type="checkbox"].filled-in:checked + label:after {
+                background: $primary-color;
+                border: 2px solid $primary-color;
+            }
+            
+            .info-block {
+                [type="checkbox"] + label {
+                    text-indent: -9999px;
+                    padding-left: 0;                
+                    font-size: 0.5rem;
+                }                
+            }
+            
+            .balance-downline {
+                .tabs {
+                    background: inherit;
+                    height: 36px;
+                    border-bottom: 1px solid #ddd;
+                    margin-bottom: 15px;                   
+                }
+                .tab {
+                    letter-spacing: normal;
+                    height: 38px;
+                    a {
+                        color: $primary-color;
+                    }
+                }
+                
+                .tabs .indicator {
+                    bottom: -2px;
+                    height: 3px;
+                    background: $primary-color;
+                }
+                
+                .input-field {
+                    margin-top: 0;
+                    padding: 0;
+                    
+                    .inp-value {
+                        font-size: 13px;  
+                        height: 1rem;
+                        padding-bottom: 2px;
+                    }    
+                    ::-webkit-input-placeholder {
+                       color: #00acc1;
+                    }
+                }
+            }
+            
+            .setting-block {
+                margin-top: 20px;
+                h4 {
+                    padding-left: 10px;
+                    margin-bottom:  15px;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                .col {
+                    padding-right: 0;
+                }
+                
+                .checkbox-block {
+                    p {
+                        margin-bottom: 8px;
+                    }
+                }
+                [type="checkbox"] + label {
+                    font-size: 12px;
+                    padding-right: 0;
+                    padding-left: 25px;
+                    color: rgba(0, 0, 0, 0.87);    
+                }
+            }
+            
+            .product-block {
+                ol {
+                    padding-top: 10px; 
+                    margin-bottom: 5px;
+                    line-height: 1.7;  
+                    border-top: 1px solid #ddd;
+                    a {
+                        color: #045ace;
+                    }
+                }
+                
+                a {
+                    padding: 0 0.7rem;
+                    position: relative;                    
+                    
+                    img {
+                        display: none;
+                        position: absolute;
+                        bottom: 30px;  
+                        left: -8px;
+                    }
+                    
+                    &:focus, &:active {                        
+                        img {
+                            display: block;
+                            z-index: 2;
+                        }
+                    }
+                    
+                    &.btn1 {
+                        overflow: inherit;
+                        color: #000;
+                        background: transparent;
+                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+                        text-transform: none;
+                        margin-right: 5px;
+                        &.ddlproduct {
+                            padding: 0;
+                            width: calc(100% - 43px);
+                        }
+                        
+                        i {      
+                            font-size: 22px;
+                            color: #A7A6A6;
+                        }
+                        span {
+                            padding-right: 56px;
+                        }
+                    }
+                    
+                    &.btn2 {
+                        padding: 0 7px;
+                        background: #FAA932;
+                    }
+                }
+            }
+            .setting-box {
+                margin-top: 15px;
+                .btn {
+                    width: 100%;
+                }
+                input {
+                    color: #fff;
+                    background: $primary-color;
+                    border: none;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    width: 100%;
+                    padding: 8px 0;
+                }
+            }
+        }
+    }
+    
+    &-right {
+        background: #f4f4f4;
+        margin-left: 256px;
+        width: calc(100% - 256px);
+        height: 100%;
+        position: relative;
+        z-index: 80;
+        .iframe-content {
+            border: none;
+            //width: 100%;
+            //height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+    }
+    
+    &.collapse {
+        .content-left {
+            width: 46px;
+            .menu {
+                display: none;               
+            }
+            
+            .extra-box {
+                display: block;
+            }
+            
+            .extra-box {
+                background: #f9f9f9;
+                height: 48px;
+                width: 46px;
+                .icon-extra {
+                    right: -22px;
+                    top: 12px;
+                }
+            }           
+            
+            .list-menu {                
+                .menu-item {
+                    .txt-item, i {
+                        display: none;
+                    }
+                    .sub-menu {
+                        display: none;;
+                    }
+                }
+            }
+            
+            &:hover {
+                width: 256px;
+                z-index: 1003;
+                
+                .menu {
+                    display: block;
+                }
+                
+                .extra-box {
+                    display: none;
+                }
+                
+                .list-menu {                
+                    .menu-item {
+                        .txt-item, i {
+                            display: block;
+                        }
+                        &.active {
+                            .sub-menu {
+                                display: block;
+                            }
+                        }
+                    }                    
+                }                
+            }
+        }
+        
+        .content-right{
+            margin-left: 46px;
+            width: calc(100% - 46px);
+        }
+    }
+}
+
+.edit-profile {
+    margin: 0 15px;
+    .tabs-list {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        li {
+            display: inline-block;
+            
+            a {
+                color: $primary-color;
+                display: block;
+                padding: 16px 20px 13px;
+                font-size: 14px;
+                /*&.active {
+                    border-bottom: 3px solid $primary-color;
+                }*/
+            }
+            &:after {
+                    content: '';
+                    display: block;
+                    height: 3px;
+                    width: 0;
+                    background: transparent;
+                    transition: width .5s ease, background-color .5s ease;
+                }
+        }
+        
+           li.active:after {
+                        width: 100%;
+                        background: $primary-color;
+                    }
+        .indicator {
+            background-color: $primary-color;
+        }
+    }
+    .row {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+/**************************** LOGIN PAGE *************************************/
+
+
