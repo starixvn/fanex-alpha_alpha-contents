@@ -85,6 +85,7 @@
     <Content Include="css\sass\_variables.scss" />
     <Content Include="css\sass\component.scss" />
     <Content Include="libs\jquery\jquery-1.11.3.min.map" />
+    <None Include="Properties\PublishProfiles\Local202.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
