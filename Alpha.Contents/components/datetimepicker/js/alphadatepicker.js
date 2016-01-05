@@ -1,1 +1,38 @@
-﻿!function (e) { e.fn.alphadatepicker = function (t) { function n(e, t) { var n, d = "IE", a = document.createElement("B"), i = document.documentElement; return e && (d += " " + e, t && (d = t + " " + d)), a.innerHTML = "<!--[if " + d + ']><b id="iecctest"></b><![endif]-->', i.appendChild(a), n = !!document.getElementById("iecctest"), i.removeChild(a), n } var d = { allowInputToggle: !1, calendarWeeks: !1, dayViewHeaderFormat: "MMM YYYY", format: "MM/DD/YYYY", showTodayButton: !1, ignoreReadonly: !0, debug: n(8) }; return e.extend(d, t), this.datetimepicker(d) } }(jQuery);
+﻿(function ($) {
+    $.fn.alphadatepicker = function (options) {
+        function isIE(version, comparison) {
+            var cc = 'IE',
+                b = document.createElement('B'),
+                docElem = document.documentElement,
+                isIE;
+
+            if (version) {
+                cc += ' ' + version;
+
+                if (comparison) {
+                    cc = comparison + ' ' + cc;
+                }
+            }
+
+            b.innerHTML = '<!--[if ' + cc + ']><b id="iecctest"></b><![endif]-->';
+            docElem.appendChild(b);
+            isIE = !!document.getElementById('iecctest');
+            docElem.removeChild(b);
+
+            return isIE;
+        }
+
+        var defaults = {
+            allowInputToggle: false,
+            calendarWeeks: false,
+            dayViewHeaderFormat: 'MMM YYYY',
+            format: 'MM/DD/YYYY',
+            showTodayButton: false,
+            ignoreReadonly: true,
+            debug: isIE(8)
+        };
+
+        $.extend(defaults, options);
+        return this.datetimepicker(defaults);
+    };
+}(jQuery));

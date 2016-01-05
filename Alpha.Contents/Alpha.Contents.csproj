@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\datetimepicker\js\alphadatepicker.min.js" />
+    <Content Include="components\datetimepicker\js\datetimepicker-ie8.min.js" />
+    <Content Include="components\datetimepicker\js\datetimepicker-ie8.js" />
     <Content Include="components\select2\css\select2.css" />
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
@@ -110,7 +113,7 @@
     <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css" />
     <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.js" />
     <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.min.js" />
-    <Content Include="components\datetimepicker\js\datepicker.js" />
+    <Content Include="components\datetimepicker\js\alphadatepicker.js" />
     <Content Include="libs\jquery\jquery-1.11.3.js" />
     <Content Include="libs\jquery\jquery-1.11.3.min.js" />
     <Content Include="libs\moment\moment.js" />
