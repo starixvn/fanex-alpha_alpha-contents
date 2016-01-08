@@ -2,5 +2,9 @@
   {
     "outputFile": "Content/sass/page.css",
     "inputFile": "Content/sass/page.scss"
+  },
+  {
+    "outputFile": "components/datetimepicker/js/bootstrap-datetimepicker.es5.js",
+    "inputFile": "components/datetimepicker/js/bootstrap-datetimepicker.js"
   }
 ]

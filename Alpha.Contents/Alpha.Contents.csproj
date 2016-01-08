@@ -66,8 +66,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css">
+      <DependentUpon>bootstrap-datetimepicker.css</DependentUpon>
+    </Content>
+    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.min.js">
+      <DependentUpon>bootstrap-datetimepicker.js</DependentUpon>
+    </Content>
     <Content Include="components\datetimepicker\js\datepicker.js" />
-    <Content Include="components\datetimepicker\js\datepicker.min.js" />
+    <Content Include="components\datetimepicker\js\datepicker.min.js">
+      <DependentUpon>datepicker.js</DependentUpon>
+    </Content>
     <Content Include="components\select2\css\select2.css" />
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
@@ -91,7 +99,13 @@
     <Content Include="css\sass\_variables.scss" />
     <Content Include="css\sass\component.scss" />
     <Content Include="libs\jquery\jquery-1.11.3.min.map" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\Local202.pubxml" />
+    <None Include="Properties\PublishProfiles\Local202Cookieless.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -109,9 +123,7 @@
     <Content Include="css\bootstrap\js\bootstrap.min.js" />
     <Content Include="css\bootstrap\js\npm.js" />
     <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.css" />
-    <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css" />
     <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.js" />
-    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.min.js" />
     <Content Include="libs\jquery\jquery-1.11.3.js" />
     <Content Include="libs\jquery\jquery-1.11.3.min.js" />
     <Content Include="libs\moment\moment.js" />

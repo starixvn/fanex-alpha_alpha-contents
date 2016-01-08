@@ -1,4 +1,4 @@
-/*! version : 4.17.37
+/*! version : 4.17.42
  =========================================================
  bootstrap-datetimejs
  https://github.com/Eonasdan/bootstrap-datetimepicker
@@ -133,39 +133,24 @@
              *
              ********************************************************************************/
             getMoment = function (d) {
-                var tzEnabled = false,
-                    returnMoment,
-                    currentZoneOffset,
-                    incomingZoneOffset,
-                    timeZoneIndicator,
-                    dateWithTimeZoneInfo;
+                var returnMoment;
 
-                if (moment.tz !== undefined && options.timeZone !== undefined && options.timeZone !== null && options.timeZone !== '') {
-                    tzEnabled = true;
-                }
                 if (d === undefined || d === null) {
-                    if (tzEnabled) {
-                        returnMoment = moment().tz(options.timeZone).startOf('d');
-                    } else {
-                        returnMoment = moment().startOf('d');
-                    }
+                    returnMoment = moment(); //TODO should this use format? and locale?
+                } else if (hasTimeZone()) { // There is a string to parse and a default time zone
+                    // parse with the tz function which takes a default time zone if it is not in the format string
+                    returnMoment = moment.tz(d, parseFormats, options.useStrict, options.timeZone);
                 } else {
-                    if (tzEnabled) {
-                        currentZoneOffset = moment().tz(options.timeZone).utcOffset();
-                        incomingZoneOffset = moment(d, parseFormats, options.useStrict).utcOffset();
-                        if (incomingZoneOffset !== currentZoneOffset) {
-                            timeZoneIndicator = moment().tz(options.timeZone).format('Z');
-                            dateWithTimeZoneInfo = moment(d, parseFormats, options.useStrict).format('YYYY-MM-DD[T]HH:mm:ss') + timeZoneIndicator;
-                            returnMoment = moment(dateWithTimeZoneInfo, parseFormats, options.useStrict).tz(options.timeZone);
-                        } else {
-                            returnMoment = moment(d, parseFormats, options.useStrict).tz(options.timeZone);
-                        }
-                    } else {
-                        returnMoment = moment(d, parseFormats, options.useStrict);
-                    }
+                    returnMoment = moment(d, parseFormats, options.useStrict);
                 }
+
+                if (hasTimeZone()) {
+                    returnMoment.tz(options.timeZone);
+                }
+
                 return returnMoment;
             },
+
             isEnabled = function (granularity) {
                 if (typeof granularity !== 'string' || granularity.length > 1) {
                     throw new TypeError('isEnabled expects a single character string parameter');
@@ -188,8 +173,13 @@
                         return false;
                 }
             },
+
             hasTime = function () {
                 return (isEnabled('h') || isEnabled('m') || isEnabled('s'));
+            },
+
+            hasTimeZone = function () {
+                return moment.tz !== undefined && options.timeZone !== undefined && options.timeZone !== null && options.timeZone !== '';
             },
 
             hasDate = function () {
@@ -246,7 +236,7 @@
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.incrementHour}).addClass('btn').attr('data-action', 'incrementHours')
                             .append($('<span>').addClass(options.icons.up))));
                     middleRow.append($('<td>')
-                        .append($('<span>').addClass('timepicker-hour').attr({'data-time-component':'hours', 'title': options.tooltips.pickHour}).attr('data-action', 'showHours')));
+                        .append($('<span>').addClass('timepicker-hour').attr({'data-time-component': 'hours', 'title': options.tooltips.pickHour}).attr('data-action', 'showHours')));
                     bottomRow.append($('<td>')
                         .append($('<a>').attr({href: '#', tabindex: '-1', 'title': options.tooltips.decrementHour}).addClass('btn').attr('data-action', 'decrementHours')
                             .append($('<span>').addClass(options.icons.down))));
@@ -319,16 +309,16 @@
             getToolbar = function () {
                 var row = [];
                 if (options.showTodayButton) {
-                    row.push($('<td>').append($('<a>').attr({'data-action':'today', 'title': options.tooltips.today}).append($('<span>').addClass(options.icons.today))));
+                    row.push($('<td>').append($('<a>').attr({'data-action': 'today', 'title': options.tooltips.today}).append($('<span>').addClass(options.icons.today))));
                 }
                 if (!options.sideBySide && hasDate() && hasTime()) {
-                    row.push($('<td>').append($('<a>').attr({'data-action':'togglePicker', 'title': options.tooltips.selectTime}).append($('<span>').addClass(options.icons.time))));
+                    row.push($('<td>').append($('<a>').attr({'data-action': 'togglePicker', 'title': options.tooltips.selectTime}).append($('<span>').addClass(options.icons.time))));
                 }
                 if (options.showClear) {
-                    row.push($('<td>').append($('<a>').attr({'data-action':'clear', 'title': options.tooltips.clear}).append($('<span>').addClass(options.icons.clear))));
+                    row.push($('<td>').append($('<a>').attr({'data-action': 'clear', 'title': options.tooltips.clear}).append($('<span>').addClass(options.icons.clear))));
                 }
                 if (options.showClose) {
-                    row.push($('<td>').append($('<a>').attr({'data-action':'close', 'title': options.tooltips.close}).append($('<span>').addClass(options.icons.close))));
+                    row.push($('<td>').append($('<a>').attr({'data-action': 'close', 'title': options.tooltips.close}).append($('<span>').addClass(options.icons.close))));
                 }
                 return $('<table>').addClass('table-condensed').append($('<tbody>').append($('<tr>').append(row)));
             },
@@ -472,7 +462,7 @@
 
                 widget.css({
                     top: vertical === 'top' ? 'auto' : position.top + element.outerHeight(),
-                    bottom: vertical === 'top' ? position.top + element.outerHeight() : 'auto',
+                    bottom: vertical === 'top' ? parent.outerHeight() - (parent === element ? 0 : position.top) : 'auto',
                     left: horizontal === 'left' ? (parent === element ? 0 : position.left) : 'auto',
                     right: horizontal === 'left' ? 'auto' : parent.outerWidth() - element.outerWidth() - (parent === element ? 0 : position.left)
                 });
@@ -502,6 +492,8 @@
                 }
                 if (dir) {
                     currentViewMode = Math.max(minViewModeNumber, Math.min(3, currentViewMode + dir));
+                } else {
+                    currentViewMode = 0;
                 }
                 widget.find('.datepicker > div').hide().filter('.datepicker-' + datePickerModes[currentViewMode].clsName).show();
             },
@@ -657,6 +649,9 @@
                     startDecade = moment({y: viewDate.year() - (viewDate.year() % 100) - 1}),
                     endDecade = startDecade.clone().add(100, 'y'),
                     startedAt = startDecade.clone(),
+                    minDateDecade = false,
+                    maxDateDecade = false,
+                    endDecadeYear,
                     html = '';
 
                 decadesViewHeader.eq(0).find('span').attr('title', options.tooltips.prevCentury);
@@ -675,8 +670,11 @@
                 }
 
                 while (!startDecade.isAfter(endDecade, 'y')) {
-                    html += '<span data-action="selectDecade" class="decade' + (startDecade.isSame(date, 'y') ? ' active' : '') +
-                        (!isValid(startDecade, 'y') ? ' disabled' : '') + '" data-selection="' + (startDecade.year() + 6) + '">' + (startDecade.year() + 1) + ' - ' + (startDecade.year() + 12) + '</span>';
+                    endDecadeYear = startDecade.year() + 12;
+                    minDateDecade = options.minDate && options.minDate.isAfter(startDecade, 'y') && options.minDate.year() <= endDecadeYear;
+                    maxDateDecade = options.maxDate && options.maxDate.isAfter(startDecade, 'y') && options.maxDate.year() <= endDecadeYear;
+                    html += '<span data-action="selectDecade" class="decade' + (date.isAfter(startDecade) && date.year() <= endDecadeYear ? ' active' : '') +
+                        (!isValid(startDecade, 'y') && !minDateDecade && !maxDateDecade ? ' disabled' : '') + '" data-selection="' + (startDecade.year() + 6) + '">' + (startDecade.year() + 1) + ' - ' + (startDecade.year() + 12) + '</span>';
                     startDecade.add(12, 'y');
                 }
                 html += '<span></span><span></span><span></span>'; //push the dangling block over, at least this way it's even
@@ -861,8 +859,12 @@
 
                 targetMoment = targetMoment.clone().locale(options.locale);
 
+                if (hasTimeZone()) {
+                    targetMoment.tz(options.timeZone);
+                }
+
                 if (options.stepping !== 1) {
-                    targetMoment.minutes((Math.round(targetMoment.minutes() / options.stepping) * options.stepping) % 60).seconds(0);
+                    targetMoment.minutes((Math.round(targetMoment.minutes() / options.stepping) * options.stepping)).seconds(0);
                 }
 
                 if (isValid(targetMoment)) {
@@ -888,8 +890,10 @@
                 }
             },
 
+            /**
+             * Hides the widget. Possibly will emit dp.hide
+             */
             hide = function () {
-                ///<summary>Hides the widget. Possibly will emit dp.hide</summary>
                 var transitioning = false;
                 if (!widget) {
                     return picker;
@@ -930,6 +934,18 @@
 
             clear = function () {
                 setValue(null);
+            },
+
+            parseInputDate = function (inputDate) {
+                if (options.parseInputDate === undefined) {
+                    if (!moment.isMoment(inputDate)) {
+                        inputDate = getMoment(inputDate);
+                    }
+                } else {
+                    inputDate = options.parseInputDate(inputDate);
+                }
+                //inputDate.locale(options.locale);
+                return inputDate;
             },
 
             /********************************************************************************
@@ -1161,8 +1177,10 @@
                 return false;
             },
 
+            /**
+             * Shows the widget. Possibly will emit dp.show and dp.change
+             */
             show = function () {
-                ///<summary>Shows the widget. Possibly will emit dp.show and dp.change</summary>
                 var currentMoment,
                     useCurrentGranularity = {
                         'year': function (m) {
@@ -1187,14 +1205,13 @@
                 }
                 if (input.val() !== undefined && input.val().trim().length !== 0) {
                     setValue(parseInputDate(input.val().trim()));
-                } else if (options.useCurrent && unset && ((input.is('input') && input.val().trim().length === 0) || options.inline)) {
+                } else if (options.useCurrent && unset && (options.inline || (input.is('input') && input.val().trim().length === 0))) {
                     currentMoment = getMoment();
                     if (typeof options.useCurrent === 'string') {
                         currentMoment = useCurrentGranularity[options.useCurrent](currentMoment);
                     }
                     setValue(currentMoment);
                 }
-
                 widget = getTemplate();
 
                 fillDow();
@@ -1214,9 +1231,8 @@
                 if (component && component.hasClass('btn')) {
                     component.toggleClass('active');
                 }
-                widget.show();
                 place();
-
+                widget.show();
                 if (options.focusOnShow && !input.is(':focus')) {
                     input.focus();
                 }
@@ -1227,23 +1243,11 @@
                 return picker;
             },
 
+            /**
+             * Shows or hides the widget
+             */
             toggle = function () {
-                /// <summary>Shows or hides the widget</summary>
                 return (widget ? hide() : show());
-            },
-
-            parseInputDate = function (inputDate) {
-                if (options.parseInputDate === undefined) {
-                    if (moment.isMoment(inputDate) || inputDate instanceof Date) {
-                        inputDate = moment(inputDate);
-                    } else {
-                        inputDate = getMoment(inputDate);
-                    }
-                } else {
-                    inputDate = options.parseInputDate(inputDate);
-                }
-                inputDate.locale(options.locale);
-                return inputDate;
             },
 
             keydown = function (e) {
@@ -1528,6 +1532,10 @@
                 return options.timeZone;
             }
 
+            if (typeof newZone !== 'string') {
+                throw new TypeError('newZone() expects a string parameter');
+            }
+
             options.timeZone = newZone;
 
             return picker;
@@ -1748,6 +1756,8 @@
             if (typeof defaultDate === 'string') {
                 if (defaultDate === 'now' || defaultDate === 'moment') {
                     defaultDate = getMoment();
+                } else {
+                    defaultDate = getMoment(defaultDate);
                 }
             }
 
@@ -2302,7 +2312,7 @@
             input = element;
         } else {
             input = element.find(options.datepickerInput);
-            if (input.size() === 0) {
+            if (input.length === 0) {
                 input = element.find('input');
             } else if (!input.is('input')) {
                 throw new Error('CSS class "' + options.datepickerInput + '" cannot be applied to non input element');
@@ -2311,7 +2321,7 @@
 
         if (element.hasClass('input-group')) {
             // in case there is more then one 'input-group-addon' Issue #48
-            if (element.find('.datepickerbutton').size() === 0) {
+            if (element.find('.datepickerbutton').length === 0) {
                 component = element.find('.input-group-addon');
             } else {
                 component = element.find('.datepickerbutton');
@@ -2323,7 +2333,7 @@
         }
 
         // Set defaults for date here now instead of in var declaration
-        date = getMoment();
+        date = getMoment(); //TODO change?
         viewDate = date.clone();
 
         $.extend(true, options, dataToOptions());
@@ -2367,7 +2377,7 @@
     };
 
     $.fn.datetimepicker.defaults = {
-        timeZone: 'Etc/UTC',
+        timeZone: '',
         format: false,
         dayViewHeaderFormat: 'MMMM YYYY',
         extraFormats: false,
@@ -2549,4 +2559,7 @@
         enabledHours: false,
         viewDate: false
     };
+    if (typeof module !== 'undefined') {
+        module.exports = $.fn.datetimepicker;
+    }
 }));
