@@ -80,6 +80,8 @@
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
     <Content Include="components\select2\js\select2.min.js" />
+    <Content Include="css\sass\page.css" />
+    <Content Include="css\sass\page.min.css" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
