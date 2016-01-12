@@ -108,6 +108,7 @@
     </None>
     <None Include="Properties\PublishProfiles\Local202.pubxml" />
     <None Include="Properties\PublishProfiles\Local202Cookieless.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
