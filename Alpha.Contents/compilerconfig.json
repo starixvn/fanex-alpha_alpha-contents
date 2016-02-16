@@ -6,5 +6,9 @@
   {
     "outputFile": "components/datetimepicker/js/bootstrap-datetimepicker.es5.js",
     "inputFile": "components/datetimepicker/js/bootstrap-datetimepicker.js"
+  },
+  {
+    "outputFile": "css/sass/component.css",
+    "inputFile": "css/sass/component.scss"
   }
 ]

@@ -80,6 +80,14 @@
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
     <Content Include="components\select2\js\select2.min.js" />
+    <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.svg" />
+    <Content Include="css\Fonts\Iconalpha\style.css" />
+    <Content Include="css\sass\component.css">
+      <DependentUpon>component.scss</DependentUpon>
+    </Content>
+    <Content Include="css\sass\component.min.css">
+      <DependentUpon>component.css</DependentUpon>
+    </Content>
     <Content Include="css\sass\page.css" />
     <Content Include="css\sass\page.min.css" />
     <Content Include="img\loader3.gif" />
@@ -107,6 +115,10 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.eot" />
+    <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.ttf" />
+    <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.woff" />
+    <Content Include="css\Fonts\Iconalpha\selection.json" />
     <None Include="Properties\PublishProfiles\Local202.pubxml" />
     <None Include="Properties\PublishProfiles\Local202Cookieless.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
@@ -148,7 +160,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65146</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
