@@ -66,8 +66,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\blockui\jquery.blockUI.js" />
     <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css">
       <DependentUpon>bootstrap-datetimepicker.css</DependentUpon>
+    </Content>
+    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.es5.js">
+      <DependentUpon>bootstrap-datetimepicker.js</DependentUpon>
+    </Content>
+    <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.es5.min.js">
+      <DependentUpon>bootstrap-datetimepicker.es5.js</DependentUpon>
     </Content>
     <Content Include="components\datetimepicker\js\bootstrap-datetimepicker.min.js">
       <DependentUpon>bootstrap-datetimepicker.js</DependentUpon>
