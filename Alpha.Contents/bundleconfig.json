@@ -4,5 +4,17 @@
     "inputFiles": [
       "components/datetimepicker/js/bootstrap-datetimepicker.js"
     ]
+  },
+  {
+    "outputFileName": "components/mutipleselect/css/bootstrap-multiselect.css",
+    "inputFiles": [
+      "components/mutipleselect/css/bootstrap-multiselect.css"
+    ]
+  },
+  {
+    "outputFileName": "components/mutipleselect/js/bootstrap-multiselect.js",
+    "inputFiles": [
+      "components/mutipleselect/js/bootstrap-multiselect.js"
+    ]
   }
 ]
