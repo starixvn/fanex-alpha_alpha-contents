@@ -88,7 +88,13 @@
       <DependentUpon>datepicker.js</DependentUpon>
     </Content>
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.css" />
+    <Content Include="components\mutipleselect\css\bootstrap-multiselect.min.css">
+      <DependentUpon>bootstrap-multiselect.css</DependentUpon>
+    </Content>
     <Content Include="components\mutipleselect\js\bootstrap-multiselect.js" />
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.min.js">
+      <DependentUpon>bootstrap-multiselect.js</DependentUpon>
+    </Content>
     <Content Include="components\select2\css\select2.css" />
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
