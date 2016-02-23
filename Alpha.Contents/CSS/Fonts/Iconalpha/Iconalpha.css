@@ -1,0 +1,10 @@
+﻿@font-face {
+    font-family: 'Iconalpha';
+    src:    url('fonts/Iconalpha.eot?x420fv');
+    src:    url('fonts/Iconalpha.eot?x420fv#iefix') format('embedded-opentype'),
+        url('fonts/Iconalpha.ttf?x420fv') format('truetype'),
+        url('fonts/Iconalpha.woff?x420fv') format('woff'),
+        url('fonts/Iconalpha.svg?x420fv#Iconalpha') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
