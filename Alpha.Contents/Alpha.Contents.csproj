@@ -67,6 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="components\blockui\jquery.blockUI.js" />
+    <Content Include="components\countdown\countdown.js" />
+    <Content Include="components\countdown\countdown.min.js" />
+    <Content Include="components\countdown\jquery.countdown.js" />
+    <Content Include="components\countdown\jquery.countdown.min.js" />
     <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css">
       <DependentUpon>bootstrap-datetimepicker.css</DependentUpon>
     </Content>
@@ -83,6 +87,8 @@
     <Content Include="components\datetimepicker\js\datepicker.min.js">
       <DependentUpon>datepicker.js</DependentUpon>
     </Content>
+    <Content Include="components\mutipleselect\css\bootstrap-multiselect.css" />
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.js" />
     <Content Include="components\select2\css\select2.css" />
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
@@ -127,6 +133,7 @@
     <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.ttf" />
     <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.woff" />
     <Content Include="css\Fonts\Iconalpha\selection.json" />
+    <Content Include="components\mutipleselect\less\bootstrap-multiselect.less" />
     <None Include="Properties\PublishProfiles\Local202.pubxml" />
     <None Include="Properties\PublishProfiles\Local202Cookieless.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
