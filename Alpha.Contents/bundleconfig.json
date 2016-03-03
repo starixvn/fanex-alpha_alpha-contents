@@ -16,5 +16,17 @@
     "inputFiles": [
       "components/mutipleselect/js/bootstrap-multiselect.js"
     ]
+  },
+  {
+    "outputFileName": "components/mutipleselect/js/bootstrap-multiselect.ie8.js",
+    "inputFiles": [
+      "components/mutipleselect/js/bootstrap-multiselect.ie8.js"
+    ]
+  },
+  {
+    "outputFileName": "components/countdown/jquery.countdown.ie8.js",
+    "inputFiles": [
+      "components/countdown/jquery.countdown.ie8.js"
+    ]
   }
 ]

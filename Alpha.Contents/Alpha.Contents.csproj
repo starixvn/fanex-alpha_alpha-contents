@@ -69,6 +69,10 @@
     <Content Include="components\blockui\jquery.blockUI.js" />
     <Content Include="components\countdown\countdown.js" />
     <Content Include="components\countdown\countdown.min.js" />
+    <Content Include="components\countdown\jquery.countdown.ie8.js" />
+    <Content Include="components\countdown\jquery.countdown.ie8.min.js">
+      <DependentUpon>jquery.countdown.ie8.js</DependentUpon>
+    </Content>
     <Content Include="components\countdown\jquery.countdown.js" />
     <Content Include="components\countdown\jquery.countdown.min.js" />
     <Content Include="components\datetimepicker\css\bootstrap-datetimepicker.min.css">
@@ -90,6 +94,10 @@
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.css" />
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.min.css">
       <DependentUpon>bootstrap-multiselect.css</DependentUpon>
+    </Content>
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.js" />
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.min.js">
+      <DependentUpon>bootstrap-multiselect.ie8.js</DependentUpon>
     </Content>
     <Content Include="components\mutipleselect\js\bootstrap-multiselect.js" />
     <Content Include="components\mutipleselect\js\bootstrap-multiselect.min.js">

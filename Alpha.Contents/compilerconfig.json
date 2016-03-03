@@ -10,5 +10,9 @@
   {
     "outputFile": "css/sass/component.css",
     "inputFile": "css/sass/component.scss"
+  },
+  {
+    "outputFile": "components/mutipleselect/js/bootstrap-multiselect.ie8.es5.js",
+    "inputFile": "components/mutipleselect/js/bootstrap-multiselect.ie8.js"
   }
 ]
