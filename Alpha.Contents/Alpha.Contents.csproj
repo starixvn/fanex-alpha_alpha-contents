@@ -67,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="components\blockui\jquery.blockUI.js" />
+    <Content Include="components\blockui\jquery.blockUI.min.js">
+      <DependentUpon>jquery.blockUI.js</DependentUpon>
+    </Content>
     <Content Include="components\countdown\countdown.js" />
     <Content Include="components\countdown\countdown.min.js" />
     <Content Include="components\countdown\jquery.countdown.ie8.js" />
@@ -119,6 +122,9 @@
     <Content Include="css\sass\page.css" />
     <Content Include="css\sass\page.min.css" />
     <Content Include="img\loader3.gif" />
+    <Content Include="libs\moment\moment.min.js">
+      <DependentUpon>moment.js</DependentUpon>
+    </Content>
     <Content Include="libs\underscore\underscore-min.js" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>

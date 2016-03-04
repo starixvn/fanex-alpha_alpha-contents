@@ -28,5 +28,29 @@
     "inputFiles": [
       "components/countdown/jquery.countdown.ie8.js"
     ]
+  },
+  {
+    "outputFileName": "libs/moment/moment.js",
+    "inputFiles": [
+      "libs/moment/moment.js"
+    ]
+  },
+  {
+    "outputFileName": "components/blockui/jquery.blockUI.js",
+    "inputFiles": [
+      "components/blockui/jquery.blockUI.js"
+    ]
+  },
+  {
+    "outputFileName": "css/Fonts/Iconalpha/style.css",
+    "inputFiles": [
+      "css/Fonts/Iconalpha/style.css"
+    ]
+  },
+  {
+    "outputFileName": "css/Fonts/Iconalpha/Iconalpha.css",
+    "inputFiles": [
+      "css/Fonts/Iconalpha/Iconalpha.css"
+    ]
   }
 ]
