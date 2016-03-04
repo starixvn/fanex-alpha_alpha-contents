@@ -98,6 +98,12 @@
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.min.css">
       <DependentUpon>bootstrap-multiselect.css</DependentUpon>
     </Content>
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.es5.js">
+      <DependentUpon>bootstrap-multiselect.ie8.js</DependentUpon>
+    </Content>
+    <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.es5.min.js">
+      <DependentUpon>bootstrap-multiselect.ie8.es5.js</DependentUpon>
+    </Content>
     <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.js" />
     <Content Include="components\mutipleselect\js\bootstrap-multiselect.ie8.min.js">
       <DependentUpon>bootstrap-multiselect.ie8.js</DependentUpon>
@@ -112,7 +118,13 @@
     <Content Include="components\select2\js\select2.min.js" />
     <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.svg" />
     <Content Include="css\Fonts\Iconalpha\Iconalpha.css" />
+    <Content Include="css\Fonts\Iconalpha\Iconalpha.min.css">
+      <DependentUpon>Iconalpha.css</DependentUpon>
+    </Content>
     <Content Include="css\Fonts\Iconalpha\style.css" />
+    <Content Include="css\Fonts\Iconalpha\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="css\sass\component.css">
       <DependentUpon>component.scss</DependentUpon>
     </Content>
@@ -122,6 +134,7 @@
     <Content Include="css\sass\page.css" />
     <Content Include="css\sass\page.min.css" />
     <Content Include="img\loader3.gif" />
+    <Content Include="libs\angular\angular.v1.5.0.min.js" />
     <Content Include="libs\moment\moment.min.js">
       <DependentUpon>moment.js</DependentUpon>
     </Content>
