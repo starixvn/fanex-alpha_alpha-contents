@@ -70,6 +70,8 @@
     <Content Include="components\blockui\jquery.blockUI.min.js">
       <DependentUpon>jquery.blockUI.js</DependentUpon>
     </Content>
+    <Content Include="components\coloranimation\jquery.animate-colors-min.js" />
+    <Content Include="components\coloranimation\jquery.animate-colors.js" />
     <Content Include="components\countdown\countdown.js" />
     <Content Include="components\countdown\countdown.min.js" />
     <Content Include="components\countdown\jquery.countdown.ie8.js" />
@@ -94,6 +96,8 @@
     <Content Include="components\datetimepicker\js\datepicker.min.js">
       <DependentUpon>datepicker.js</DependentUpon>
     </Content>
+    <Content Include="components\highlight\jquery.pulse.js" />
+    <Content Include="components\highlight\jquery.pulse.min.js" />
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.css" />
     <Content Include="components\mutipleselect\css\bootstrap-multiselect.min.css">
       <DependentUpon>bootstrap-multiselect.css</DependentUpon>
@@ -138,6 +142,7 @@
     <Content Include="libs\moment\moment.min.js">
       <DependentUpon>moment.js</DependentUpon>
     </Content>
+    <Content Include="libs\numeral\numeral.min.js" />
     <Content Include="libs\underscore\underscore-min.js" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
