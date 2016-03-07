@@ -2,11 +2,8 @@
 
 @font-face {
     font-family: 'Iconalpha';
-    src:    url('../Fonts/Iconalpha/fonts/Iconalpha.eot?o3vrsi');
-    src:    url('../Fonts/Iconalpha/fonts/Iconalpha.eot?o3vrsi#iefix') format('embedded-opentype'),
-        url('../Fonts/Iconalpha/fonts/Iconalpha.ttf?o3vrsi') format('truetype'),
-        url('../Fonts/Iconalpha/fonts/Iconalpha.woff?o3vrsi') format('woff'),
-        url('../Fonts/Iconalpha/fonts/Iconalpha.svg?o3vrsi#Iconalpha') format('svg');
+    src: url('../Fonts/Iconalpha/fonts/Iconalpha.eot?o3vrsi');
+    src: url('../Fonts/Iconalpha/fonts/Iconalpha.eot?o3vrsi#iefix') format('embedded-opentype'), url('../Fonts/Iconalpha/fonts/Iconalpha.ttf?o3vrsi') format('truetype'), url('../Fonts/Iconalpha/fonts/Iconalpha.woff?o3vrsi') format('woff'), url('../Fonts/Iconalpha/fonts/Iconalpha.svg?o3vrsi#Iconalpha') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,14 +12,12 @@ input, select, button {
     font-size: 12px;
 }
 
-input[type=submit], input[type=reset]
-{
-	@include border-radius(3px);
+input[type=submit], input[type=reset] {
+    @include border-radius(3px);
 }
 
-input[type=text], input[type=password]
-{
-	width: 120px;    
+input[type=text], input[type=password] {
+    width: 120px;
     height: 32px;
     line-height: 32px;
     border: none;
@@ -51,44 +46,41 @@ input[type="button"][disabled]:active,
 input[type="button"][disabled],
 input[type="submit"][disabled]:active,
 input[type="submit"][disabled] {
-    opacity:0.6;
-    filter:alpha(opacity=60); /* For IE8 and earlier */
-	color: #000;
-	cursor: pointer;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    color: #000;
+    cursor: pointer;
 }
 
-select
-{
+select {
     border: none;
-	height: 32px;
-	margin-right: 7px;
-	margin-top: 1px;
+    height: 32px;
+    margin-right: 7px;
+    margin-top: 1px;
     padding: 8px;
     @include border-radius(3px);
-    @include box-shadow(1px, 1px, 1px, rgba(0,0,0,.3));  
+    @include box-shadow(1px, 1px, 1px, rgba(0,0,0,.3));
 
     option {
         padding: 4px;
     }
 }
 
-input[type=button], .btn
-{
+input[type=button], .btn {
     background-color: #e1e1e1;
     border: none;
     cursor: pointer;
     height: 32px;
     margin-right: 8px;
     padding-left: 18px;
-	padding-right: 18px;
+    padding-right: 18px;
     -webkit-appearance: none;
-    @include box-shadow(1px, 2px, 3px,  rgba(0,0,0,.3));
+    @include box-shadow(1px, 2px, 3px, rgba(0,0,0,.3));
     @include border-radius(3px);
 }
 
 input[type=button]#dSubmit, input[type=button].btnSubmit,
-input[type=submit]#dSubmit, input[type=submit].btnSubmit
-{
+input[type=submit]#dSubmit, input[type=submit].btnSubmit {
     background-color: #0b599c;
     color: #fff;
     border: none;
@@ -99,8 +91,7 @@ input[type=submit]#dSubmit, input[type=submit].btnSubmit
     margin-right: 8px;
     -webkit-appearance: none;
 
-    &:hover 
-    {
+    &:hover {
         background-color: darken(#0b599c, 5%);
     }
 }
@@ -118,10 +109,12 @@ input[type=submit]#dSubmit, input[type=submit].btnSubmit
     margin-right: 8px;
     -webkit-appearance: none;
     position: relative;
+
     &:hover {
         background-color: darken(#1bac69, 5%);
         color: #fff;
     }
+
     &:before {
         font-family: 'Iconalpha';
         content: "\e933";
@@ -136,10 +129,10 @@ input[type=submit]#dSubmit, input[type=submit].btnSubmit
 .btn {
     color: #666;
 
-	&:hover
-    {
-	    color: #cc4800;
-    }	
+    &:hover {
+        color: #cc4800;
+    }
+
     &:focus, &:active, &:visited {
         outline: none;
     }
@@ -153,14 +146,12 @@ table {
     border-collapse: collapse;
 }
 
-.tblRpt
-{
+.tblRpt {
     border: 1px solid #dfdfdf;
     border-collapse: collapse;
     background-color: #fff;
 
-    tr td, thead tr th, tr th
-    {        
+    tr td, thead tr th, tr th {
         border: 1px solid #dfdfdf;
         height: 24px;
         padding: 4px 8px;
@@ -168,71 +159,70 @@ table {
     }
 }
 
-.tblPop
-{
-	background-color: #cdcdcd;
+.tblPop {
+    background-color: #cdcdcd;
 }
 
-.tblRpt td, .tblPop td
-{
-	line-height: 22px;
+.tblRpt td, .tblPop td {
+    line-height: 22px;
 }
 
-.RptSubTitle
-{
-	background-color: #ffefde;
+.RptSubTitle {
+    background-color: #ffefde;
 }
 
-.RptTitle
-{
-	text-align: center;
+.RptTitle {
+    text-align: center;
 }
 
-.RptHeader
-{	
-	color: #FFF;
-	font-weight: 400;
-	text-align: center;
+.RptHeader {
+    color: #FFF;
+    font-weight: 400;
+    text-align: center;
 
     td, th {
         background-color: #666;
     }
 }
 
-.RptHeader02
-{
-	background-color: #787878;
-	color: #FFF;
-	font-weight: 400;
-	text-align: center;
+.RptHeader02 {
+    background-color: #787878;
+    color: #FFF;
+    font-weight: 400;
+    text-align: center;
 
     td, th {
         background-color: #787878;
     }
 }
 
-.RptHeader01
-{
-	background: url(../Images/bg_header04.jpg) repeat-x top;
-	background-color: #e8e8e8;
-	font-weight: 700;
-	height: 22px;
-	text-align: center;
+.RptHeader01 {
+    background: url(../Images/bg_header04.jpg) repeat-x top;
+    background-color: #e8e8e8;
+    font-weight: 700;
+    height: 22px;
+    text-align: center;
 }
 
-.RptFooter
-{
-	background-color: #666;
-	color: #FFF;
-	font-weight: 700;
+.RptFooter {
+    background-color: #666;
+    color: #FFF;
+    font-weight: 700;
 }
 
 /*************************************/
 /* Block UI */
 /*************************************/
-.blockMsg
-{
+.blockMsg {
     width: 100px;
     height: 100px;
-    background: url(../../img/loader3.gif) no-repeat;
+    background: url(../../img/ajax-loader.gif) no-repeat;
+}
+
+.block-icon-small {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url(../../img/ajax-loader-8.gif) no-repeat;
+    vertical-align: middle;
 }

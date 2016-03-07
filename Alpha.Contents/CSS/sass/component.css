@@ -208,5 +208,12 @@ table {
 .blockMsg {
   width: 100px;
   height: 100px;
-  background: url(../../img/loader3.gif) no-repeat; }
+  background: url(../../img/ajax-loader.gif) no-repeat; }
+
+.block-icon-small {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: url(../../img/ajax-loader-8.gif) no-repeat;
+  vertical-align: middle; }
 

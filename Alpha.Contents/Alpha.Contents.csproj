@@ -137,6 +137,8 @@
     </Content>
     <Content Include="css\sass\page.css" />
     <Content Include="css\sass\page.min.css" />
+    <Content Include="img\ajax-loader-8.gif" />
+    <Content Include="img\ajax-loader.gif" />
     <Content Include="img\loader3.gif" />
     <Content Include="libs\angular\angular.v1.5.0.min.js" />
     <Content Include="libs\moment\moment.min.js">
