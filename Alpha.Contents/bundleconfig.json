@@ -52,5 +52,11 @@
     "inputFiles": [
       "css/Fonts/Iconalpha/Iconalpha.css"
     ]
+  },
+  {
+    "outputFileName": "libs/jquery/jquery.cookie.js",
+    "inputFiles": [
+      "libs/jquery/jquery.cookie.js"
+    ]
   }
 ]

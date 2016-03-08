@@ -141,6 +141,10 @@
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\loader3.gif" />
     <Content Include="libs\angular\angular.v1.5.0.min.js" />
+    <Content Include="libs\jquery\jquery.cookie.js" />
+    <Content Include="libs\jquery\jquery.cookie.min.js">
+      <DependentUpon>jquery.cookie.js</DependentUpon>
+    </Content>
     <Content Include="libs\moment\moment.min.js">
       <DependentUpon>moment.js</DependentUpon>
     </Content>
