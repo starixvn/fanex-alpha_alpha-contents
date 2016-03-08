@@ -100,6 +100,13 @@ input[type=button], .btn {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px; }
+  input[type=button]:focus, .btn:focus {
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    -khtml-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3); }
 
 input[type=button]#dSubmit, input[type=button].btnSubmit,
 input[type=submit]#dSubmit, input[type=submit].btnSubmit {
@@ -216,4 +223,16 @@ table {
   width: 16px;
   background: url(../../img/ajax-loader-8.gif) no-repeat;
   vertical-align: middle; }
+
+/*************************************/
+/* Help Modal */
+/*************************************/
+#helpModal .modal-header {
+  padding: 10px 15px; }
+  #helpModal .modal-header #myModalLabel {
+    font-size: 14px;
+    font-weight: bold; }
+
+#helpModal .note-content {
+  padding: 0; }
 

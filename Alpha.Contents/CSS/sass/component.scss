@@ -77,6 +77,9 @@ input[type=button], .btn {
     -webkit-appearance: none;
     @include box-shadow(1px, 2px, 3px, rgba(0,0,0,.3));
     @include border-radius(3px);
+    &:focus{
+        @include box-shadow(1px, 2px, 3px, rgba(0,0,0,.3));
+    }
 }
 
 input[type=button]#dSubmit, input[type=button].btnSubmit,
@@ -225,4 +228,20 @@ table {
     width: 16px;
     background: url(../../img/ajax-loader-8.gif) no-repeat;
     vertical-align: middle;
+}
+
+/*************************************/
+/* Help Modal */
+/*************************************/
+#helpModal {
+    .modal-header {
+        padding: 10px 15px;
+        #myModalLabel {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+    .note-content {
+        padding: 0;
+    }
 }
