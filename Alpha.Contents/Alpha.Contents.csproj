@@ -120,11 +120,13 @@
     <Content Include="components\select2\css\select2.min.css" />
     <Content Include="components\select2\js\select2.js" />
     <Content Include="components\select2\js\select2.min.js" />
+    <Content Include="css\Fonts\Iconalpha\demo.html" />
     <Content Include="css\Fonts\Iconalpha\fonts\Iconalpha.svg" />
     <Content Include="css\Fonts\Iconalpha\Iconalpha.css" />
     <Content Include="css\Fonts\Iconalpha\Iconalpha.min.css">
       <DependentUpon>Iconalpha.css</DependentUpon>
     </Content>
+    <Content Include="css\Fonts\Iconalpha\Read Me.txt" />
     <Content Include="css\Fonts\Iconalpha\style.css" />
     <Content Include="css\Fonts\Iconalpha\style.min.css">
       <DependentUpon>style.css</DependentUpon>
@@ -208,7 +210,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="css\Fonts\Iconalpha\demo-files\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
