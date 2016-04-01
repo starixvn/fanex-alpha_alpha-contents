@@ -233,7 +233,7 @@ table {
 /* Help Modal */
 /*************************************/
 #helpModal .modal-header {
-  padding: 10px 15px; }
+  padding: 10px 0; }
   #helpModal .modal-header #myModalLabel {
     font-size: 14px;
     font-weight: bold; }
